@@ -10,7 +10,7 @@ RUN apk --update --upgrade add --virtual deps \
     apk --update --upgrade add --no-cache libpq gmp libstdc++
 
 COPY ./requirements.txt requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --upgrade pip -r requirements.txt
 RUN apk del deps
 
 COPY . /usr/src/app
